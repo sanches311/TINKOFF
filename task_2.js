@@ -4,15 +4,11 @@ var rl = readline.createInterface({
     output: process.stdout
 });
 
-let cost = 0;
+let move = 0;
 
 process.stdin.on('end', () => { console.log(cost); process.exit(0); });
 
 rl.on("line", (data) => {
-    let array = data.split(" ").map((item) => +item);
-    const {a, b, c, d} = array;
-    if (d < b) cost = a; else 
-    cost = (d - b) * c + a;
-
+ const count = +data;
+ move = Math.round(count /2); 
 })
-
